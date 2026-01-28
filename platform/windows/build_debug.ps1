@@ -20,7 +20,7 @@ if (-not (Test-Path $envPrefix)) {
 }
 
 # --- Out-of-source build directory ---
-$buildDir = "build\debug"
+$buildDir = "..\build\debug"
 if (-not (Test-Path $buildDir)) { New-Item -ItemType Directory -Force -Path $buildDir }
 
 # --- Find clang executables dynamically ---

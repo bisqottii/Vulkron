@@ -11,7 +11,7 @@ if [ ! -d "$CONDA_PREFIX" ]; then
 fi
 
 # --- Out-of-source build ---
-BUILD_DIR=build/debug
+BUILD_DIR=../build/debug
 mkdir -p "$BUILD_DIR"
 
 # --- Configure CMake using Clang/Ninja in the Conda environment ---

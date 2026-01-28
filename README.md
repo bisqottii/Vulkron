@@ -30,7 +30,10 @@ Shaders in Vulkron are authored using Slang, a modern, flexible shading language
 ### 1. Clone the Repository
 
 ```bash
+mkdir vulkron-source
+cd vulkron-source
 git clone https://github.com/bisqottii/vulkron.git
+cd Vulkron
 ```
 
 ### 2. Configure the Conda Environment
@@ -43,7 +46,7 @@ source platform/linux/configure_conda_env.sh
 ```
 
 #### Windows
-PowerShell may block the execution of local scripts. Before running any setup scripts, allow execution for the current session only:
+PowerShell may block the execution of local scripts. Before running any setup scripts, allow execution for the current session:
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
