@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Vulkron is a cross-platform rendering framework built on Vulkan for high-performance graphics and SDL3 for windowing and input management. It is designed to be developed and run on both Windows and Linux, with Conda providing a consistent and reproducible development environment across platforms.
+Vulkron is a cross-platform renderer using Vulkan for high-performance graphics and SDL3 for windowing and input management. It is designed to be developed and run on both Windows and Linux, with Conda providing a consistent and reproducible development environment across platforms.
 
 Shaders in Vulkron are authored using Slang, a modern, flexible shading language that enables expressive and efficient programmable effects. By combining Vulkan’s low-level control with Slang’s high-level flexibility, Vulkron provides a foundation for graphics experimentation, engine development, and advanced rendering research.
 
