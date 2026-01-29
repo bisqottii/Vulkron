@@ -71,18 +71,16 @@ Platform-specific build scripts are provided for different configurations:
 * **Release** - for testing and showcasing the renderer
 * **Debug** - for active development and debugging
 
-Run the appropriate script for your platform:
+Run the appropriate script for your platform at the project root. This will create an out of source build:
 
 * `platform/<os>/build_release.*`
 * `platform/<os>/build_debug.*`
-
-These scripts are located in the corresponding `platform/<os>/` directory.
 
 **Targets you can specify**:
 
 * `vulkron` – main renderer
 
-If no target is specified, the scripts build **all executables** in `tools/`. Each executable links to the shared `core` library, which is automatically built first.
+If no target is specified, the scripts build all executables.
 
 ## Notes
 * Ensure your **GPU drivers** and the **Vulkan SDK** are properly installed.
