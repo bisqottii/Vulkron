@@ -32,7 +32,7 @@ Shaders in Vulkron are authored using Slang, a modern, flexible shading language
 ```bash
 mkdir vulkron-source
 cd vulkron-source
-git clone https://github.com/bisqottii/vulkron.git
+git clone https://github.com/bisqottii/Vulkron.git
 cd Vulkron
 ```
 
