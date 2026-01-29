@@ -7,7 +7,7 @@ Vulkron is a cross-platform renderer using Vulkan for high-performance graphics 
 
 Shaders in Vulkron are authored using Slang, a modern, flexible shading language that enables expressive and efficient programmable effects. By combining Vulkan’s low-level control with Slang’s high-level flexibility, Vulkron provides a foundation for graphics experimentation, engine development, and advanced rendering research.
 
-## Building Vulkron
+## Dependencies
 
 ### System Dependencies
 
