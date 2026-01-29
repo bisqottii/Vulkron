@@ -62,8 +62,6 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 **When to use it:**  
 Run this script after cloning the repository and before building Vulkron. It ensures a consistent development environment without requiring manual dependency installation.
 
----
-
 ### 3. Build the Project
 
 Platform-specific build scripts are provided for different configurations:
