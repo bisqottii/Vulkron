@@ -3,14 +3,16 @@ find_package(SDL3 REQUIRED)
 
 add_library(core STATIC
     gpu_context.cpp
+
     vulkan/backend.cpp
+    vulkan/device.cpp
 )
 
 target_include_directories(core
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
+    # PRIVATE # Temp commented out so I can test it in main
         ${Vulkan_INCLUDE_DIRS}
-    PRIVATE
         $ENV{CONDA_PREFIX}/include
 
         ${CMAKE_CURRENT_SOURCE_DIR}/vulkan
