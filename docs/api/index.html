@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Reference - Vulkron Documentation</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <!-- Same sidebar as index.html -->
+    </nav>
+    
+    <main class="content">
+        <header>
+            <h1>API Reference</h1>
+            <p class="subtitle">Complete API documentation for all Vulkron modules</p>
+        </header>
+        
+        <section class="module-overview">
+            <h2>Modules</h2>
+            <div class="module-grid">
+                <a href="gpu.html" class="module-card">
+                    <h3>GPU Module</h3>
+                    <p>Vulkan device management, resource allocation, and rendering commands.</p>
+                    <div class="module-tags">
+                        <span class="tag">Device</span>
+                        <span class="tag">Buffer</span>
+                        <span class="tag">Texture</span>
+                        <span class="tag">Shader</span>
+                    </div>
+                </a>
+                
+                <a href="ui.html" class="module-card">
+                    <h3>UI Module</h3>
+                    <p>Windowing, input handling, and platform abstraction with SDL3.</p>
+                    <div class="module-tags">
+                        <span class="tag">Window</span>
+                        <span class="tag">Input</span>
+                        <span class="tag">Event</span>
+                        <span class="tag">Platform</span>
+                    </div>
+                </a>
+                
+                <a href="support.html" class="module-card">
+                    <h3>Support Module</h3>
+                    <p>Utilities, logging, profiling, and debugging tools.</p>
+                    <div class="module-tags">
+                        <span class="tag">Logger</span>
+                        <span class="tag">Profiler</span>
+                        <span class="tag">Debug</span>
+                        <span class="tag">Math</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <section class="class-list">
+            <h2>Core Classes</h2>
+            <div class="class-table">
+                <div class="class-row">
+                    <div class="class-name">Device</div>
+                    <div class="class-module">GPU</div>
+                    <div class="class-description">Main Vulkan device manager</div>
+                    <a href="gpu.html#device" class="class-link">View</a>
+                </div>
+                <div class="class-row">
+                    <div class="class-name">Window</div>
+                    <div class="class-module">UI</div>
+                    <div class="class-description">Cross-platform window</div>
+                    <a href="ui.html#window" class="class-link">View</a>
+                </div>
+                <div class="class-row">
+                    <div class="class-name">Buffer</div>
+                    <div class="class-module">GPU</div>
+                    <div class="class-description">GPU memory buffer</div>
+                    <a href="gpu.html#buffer" class="class-link">View</a>
+                </div>
+                <!-- Add more classes -->
+            </div>
+        </section>
+    </main>
+    
+    <script src="../script.js"></script>
+</body>
+</html>

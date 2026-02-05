@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulkron Documentation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar">
+        <div class="logo">
+            <img src="../assets/vulkron.png" alt="Vulkron Logo">
+            <h1>Vulkron</h1>
+            <p class="version">v0.1.0</p>
+        </div>
+        
+        <div class="search">
+            <input type="text" placeholder="Search documentation...">
+        </div>
+        
+        <div class="nav-sections">
+            <div class="nav-section">
+                <h3>Getting Started</h3>
+                <ul>
+                    <li><a href="getting-started.html">Installation</a></li>
+                    <li><a href="getting-started.html#building">Building</a></li>
+                    <li><a href="getting-started.html#examples">Examples</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-section">
+                <h3>API Reference</h3>
+                <ul>
+                    <li><a href="api/index.html">Overview</a></li>
+                    <li><a href="api/gpu.html">GPU Module</a></li>
+                    <li><a href="api/ui.html">UI Module</a></li>
+                    <li><a href="api/support.html">Support Module</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-section">
+                <h3>Tutorials</h3>
+                <ul>
+                    <li><a href="tutorials/hello-triangle.html">Hello Triangle</a></li>
+                    <li><a href="tutorials/shaders.html">Shader Basics</a></li>
+                    <li><a href="tutorials/textures.html">Texture Mapping</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-section">
+                <h3>Development</h3>
+                <ul>
+                    <li><a href="development.html">Contributing</a></li>
+                    <li><a href="development.html#style">Code Style</a></li>
+                    <li><a href="development.html#testing">Testing</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <a href="https://github.com/bisqottii/Vulkron">GitHub</a> •
+            <a href="api/index.html">API</a> •
+            <a href="changelog.html">Changelog</a>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="content">
+        <header>
+            <h1>Vulkron Documentation</h1>
+            <p class="subtitle">Cross-platform Vulkan renderer with SDL3 integration</p>
+        </header>
+        
+        <section class="hero">
+            <div class="hero-text">
+                <h2>Get Started with Vulkron</h2>
+                <p>Vulkron is a modern C++ renderer that combines Vulkan's performance with SDL3's cross-platform capabilities. Perfect for graphics research, engine development, and high-performance applications.</p>
+                <div class="hero-buttons">
+                    <a href="getting-started.html" class="btn primary">Quick Start</a>
+                    <a href="tutorials/hello-triangle.html" class="btn secondary">Tutorial</a>
+                    <a href="api/index.html" class="btn outline">API Reference</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/hero.png" alt="Vulkron Example">
+            </div>
+        </section>
+        
+        <section class="features">
+            <h2>Features</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h3>⚡ High Performance</h3>
+                    <p>Leverage Vulkan's low-level control for maximum performance across Windows and Linux.</p>
+                </div>
+                <div class="feature">
+                    <h3>🖥️ Cross-Platform</h3>
+                    <p>Build once, run anywhere with SDL3 for windowing and input management.</p>
+                </div>
+                <div class="feature">
+                    <h3>🎨 Modern C++</h3>
+                    <p>Written in C++20 with clean APIs, RAII resource management, and type safety.</p>
+                </div>
+                <div class="feature">
+                    <h3>🔧 Easy Setup</h3>
+                    <p>Single-command setup with Conda environment and Python build scripts.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="quick-start">
+            <h2>Quick Installation</h2>
+            <div class="code-block">
+                <pre><code># Clone the repository
+git clone https://github.com/bisqottii/Vulkron.git
+cd Vulkron
+
+# Setup development environment
+python build-scripts/conda.py setup
+conda activate vk-env
+
+# Build and install
+python build-scripts/build.py --config release
+python build-scripts/install.py</code></pre>
+            </div>
+        </section>
+        
+        <section class="api-preview">
+            <h2>API Preview</h2>
+            <div class="code-block">
+                <pre><code>#include &lt;vulkron/gpu/device.hpp&gt;
+#include &lt;vulkron/ui/window.hpp&gt;
+
+int main() {
+    // Create window
+    vulkron::ui::Window window(800, 600, "Vulkron App");
+    
+    // Initialize GPU
+    vulkron::gpu::Device device;
+    device.initialize();
+    
+    // Main loop
+    while (window.isOpen()) {
+        window.pollEvents();
+        device.renderFrame();
+    }
+    
+    return 0;
+}</code></pre>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Optional JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

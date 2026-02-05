@@ -1,29 +1,28 @@
-
 <img src="assets/vulkron.png" width="100%"/>
 
 ## Introduction
 
-Vulkron is a cross-platform renderer using Vulkan for high-performance graphics and SDL3 for windowing and input management. It is designed to be developed and run on both Windows and Linux, with Conda providing a consistent and reproducible development environment across platforms.
+Vulkron is a cross-platform renderer built on Vulkan for high-performance graphics. It supports development and execution on both Windows and Linux, using Conda to ensure a consistent and reproducible environment across platforms.
 
-Shaders in Vulkron are authored using Slang, a modern, flexible shading language that enables expressive and efficient programmable effects. By combining Vulkan’s low-level control with Slang’s high-level flexibility, Vulkron provides a foundation for graphics experimentation, engine development, and advanced rendering research.
+Shaders are authored in Slang, a modern and flexible shading language that enables expressive, efficient programmable effects. By leveraging Vulkan's low-level control alongside Slang's high-level capabilities, Vulkron serves as a foundation for graphics experimentation, engine development, and much more.
 
 ## Dependencies
 
 ### System Dependencies
 
-* Vulkan SDK
-* Up-to-date GPU drivers
-* Miniconda3
+- **Vulkan SDK**
+- **Up-to-date GPU drivers**
+- **Miniconda3**
+- **Python 3.8+**
 
-### Conda Dependencies
+### Conda Will Install
 
-| Package      | Purpose                          |
-| ------------ | -------------------------------- |
-| sdl3         | SDL3 library with Vulkan support |
-| cmake        | Build system for C++ projects    |
-| ninja        | Optional fast build system       |
-| clang        | Project compiler                 |
-| shader-slang | Shader authoring and compilation |
+| Package       | Purpose                                |
+| ------------- | -------------------------------------- |
+| `cmake`       | Build system for C++ projects          |
+| `ninja`       | Fast, parallel build system (optional) |
+| `clang`       | Project compiler for C++23             |
+| `shader-slang`| Shader authoring and compilation       |
 
 ## Build Process
 
@@ -40,49 +39,68 @@ cd Vulkron
 
 This step installs all required development dependencies using Conda.
 
+> **IMPORTANT:** Make sure you have conda in the default location, otherwise, you'll have to update the paths in the config files.
+
 #### Linux
 ```bash
-source platform/linux/configure_conda_env.sh
+source build-scripts/linux/conda_config.sh
 ```
 
 #### Windows
-PowerShell may block the execution of local scripts. Before running any setup scripts, allow execution for the current session:
+
+PowerShell may block the execution of local scripts. Before running the setup, allow script execution for the current session:
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\platform\windows\configure_conda_env.ps1
+.\build-scripts\windows\conda_config.ps1
 ```
 
-**What the script does**  
-* Checks for an existing Miniconda installation
-* Creates a Conda environment named `vk-env` if it does not exist
-* Installs all required dependencies into the environment
-* Activates the environment for the current shell session
+**What the script does:**
+
+- Checks for an existing Miniconda installation
+- Creates a Conda environment named `vk-env` if it doesn't exist
+- Installs all required dependencies into the environment
+- Activates the environment for the current shell session
 
 **When to use it:**  
-Run this script after cloning the repository and before building Vulkron. It ensures a consistent development environment without requiring manual dependency installation.
+Run this script after cloning the repository and before building Vulkron. It ensures a consistent development environment without manual dependency management.
+
+> There is also a separate `conda_activate` script to reactivate your environment later if needed.
 
 ### 3. Build the Project
 
-Platform-specific build scripts are provided for different configurations:
+From the `Vulkron/` directory, use the provided Python build scripts:
 
-* **Release** - for testing and showcasing the renderer
-* **Debug** - for active development and debugging
+```bash
+python build-scripts/build.py --help
+```
 
-Run the appropriate script for your platform at the project root. This will create an out of source build:
+To install the project locally:
 
-* `platform/<os>/build_release.*`
-* `platform/<os>/build_debug.*`
+```bash
+python build-scripts/install.py
+```
 
-**Targets you can specify**:
+To build and install examples first call `install.py` then:
+```bash
+python build-scripts/example.py
+```
 
-* `vulkron` – main renderer
+**Build location:**  
+The build is out-of-source, located in `../vulkron-build/` relative to the `Vulkron/` directory.
 
-If no target is specified, the scripts build all executables.
+**Available targets:**
 
-## VS Code IntelliSense
+- `VulkronGPU` – GPU library
+- `VulkronUI` – UI and Platform library
 
-To make IntelliSense work correctly with Vulkan and Clang, create `.vscode/settings.json` at the same level as your out-of-source build folder:
+If no target is specified, all executables are built.
+
+---
+
+## VS Code IntelliSense Configuration
+
+To enable proper IntelliSense for Vulkan and Clang, create `.vscode/settings.json` at the workspace root (same level as your out-of-source build folder):
 
 ```json
 {
@@ -91,4 +109,18 @@ To make IntelliSense work correctly with Vulkan and Clang, create `.vscode/setti
 }
 ```
 
-This lets IntelliSense use the compiler flags and include paths generated by CMake, so autocomplete and type checking work properly. No extra defines or paths are needed.
+This configuration allows IntelliSense to use the compiler flags and include paths generated by CMake, ensuring accurate autocomplete and type checking without manual path or define management.
+
+## Docs
+
+# Build documentation
+    cd docs
+    make html
+
+# View locally
+    make serve
+
+Open http://localhost:8000
+
+# Or build from your build script
+python build-scripts/build.py --docs
