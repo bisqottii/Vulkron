@@ -37,7 +37,6 @@ else
         # Install dependencies
         echo "Installing dependencies in vk-env..."
         conda install -c schrodinger -c conda-forge \
-            python  \
             cmake \
             ninja \
             clang \
