@@ -91,8 +91,7 @@ The build is out-of-source, located in `../vulkron-build/` relative to the `Vulk
 
 **Available targets:**
 
-- `VulkronGPU` – GPU library
-- `VulkronUI` – UI and Platform library
+Add a bit later. For now just build everything.
 
 If no target is specified, all executables are built.
 
